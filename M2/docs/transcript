@@ -3625,3 +3625,6 @@ run -all
 #    Time: 2064 ns  Iteration: 1  Region: /testbench_sv_unit::environment::write
 # 1
 # Break in Task testbench_sv_unit/generator::write at generator.sv line 29
+quit -sim
+# End time: 17:28:12 on May 02,2024, Elapsed time: 0:16:51
+# Errors: 0, Warnings: 7
