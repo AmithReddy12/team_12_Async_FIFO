@@ -13,7 +13,7 @@ class environment;
   monitor mon;
   scoreboard scb;
   Cov_class cov;
-  
+  transcation trans;  
   mailbox gtd;
   mailbox mts;
 
@@ -33,6 +33,8 @@ class environment;
     mon = new(in,mts);
     scb = new(in,mts);
     cov = new(in);
+    trans = new();
+    //trans2 = new();
     endtask
 
   task pre_test();
@@ -43,10 +45,12 @@ class environment;
    task write();
     fork
     gen.write();
-    drv.write_read();
+    //drv.write_read();
     mon.write();
     scb.write();
     cov.execute();
+    drv.write(trans);
+    drv.read(trans);
     join_any
    endtask
 
